@@ -32,6 +32,10 @@ Example of such shiny config file:
 
 Load config file from given path, array of paths or directory. Second parameter is optional and can be a boolean or object.
  
+- `path` 
+  - {string} absolute path to the file
+  - {string} absolute path of the folder containing the files
+  - {array} list of files
 - `path` {string} absolute path to the file
 - `options` {boolean|Object} optional options 
 
@@ -39,11 +43,14 @@ Load config file from given path, array of paths or directory. Second parameter 
 	{
 		merge: false,
 		replace: null
+    extension: '.json'
 	}
 
 If you pass `true` as second param, its the same like `{merge: true}` and will merge all configs together.
 `replace` allows you to do some string replacements, see `cjson.replace`.
- 
+
+if the extension if set, only include the files with this extension. {"extension":""} to get all the files in the folder
+
 Examples:
 	
 	// just one config 
